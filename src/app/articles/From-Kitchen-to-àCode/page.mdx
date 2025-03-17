@@ -1,0 +1,28 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Jose David Prado Garrido',
+  date: '2025-03-16',
+  title: 'From Kitchen to Code: My Journey from Chef to App Developer',
+  description:
+    'Transitioning from a career as a chef to developing the company’s application was unexpected but incredibly rewarding. In this article, I share my journey, the challenges I faced, and the lessons I learned.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Transitioning from a career as a chef to developing the company’s application was unexpected but incredibly rewarding. In this article, I share my journey, the challenges I faced, and the lessons I learned along the way.
+
+To make this transition, I applied the problem-solving skills I honed in the kitchen and adapted them to the world of tech. The process was a mix of trial, error, and continuous learning.
+
+```js
+import { createApp } from 'myAppFramework'
+
+export function MyApp({ open, children }) {
+  return <div className="app">{children}</div>
+}
+```

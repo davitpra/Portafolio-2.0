@@ -1,0 +1,38 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Jose David Prado Garrido',
+  date: '2025-02-01',
+  title:
+    'Building a Seamless Ecommerce Experience: My Role as a Frontend Developer',
+  description:
+    'As a Frontend Developer in an Ecommerce company selling products through social media, I’ve had the opportunity to collaborate closely with the marketing team. In this article, I share my experience of building a user-friendly and high-performing shopping experience.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+As a **Frontend Developer** in an Ecommerce company selling products through social media, I worked side by side with the marketing team to create a seamless and visually appealing online shopping experience.
+
+We focused on ensuring the website’s performance was top-notch while integrating with social media platforms to drive traffic. The close collaboration with the marketing team was essential for aligning design with user needs and boosting sales.
+
+```js
+import { createProductPage } from 'ecommerceFramework'
+
+export function ProductPage({ product, isInCart, onAddToCart }) {
+  return (
+    <div className="product-page">
+      <img src={product.imageUrl} alt={product.name} />
+      <h2>{product.name}</h2>
+      <p>{product.description}</p>
+      <button onClick={() => onAddToCart(product)} disabled={isInCart}>
+        {isInCart ? 'Added to Cart' : 'Add to Cart'}
+      </button>
+    </div>
+  )
+}
+```
