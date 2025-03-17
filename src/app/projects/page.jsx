@@ -3,47 +3,51 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
+import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoHorizonPlace from '@/images/logos/horizon.png'
+import logoClawPuzzle from '@/images/logos/claw-puzzle.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Horizon Place - culinary App',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'The Horizon Place Culinary App streamlines meal ordering, elevating the dining experience for every resident.',
+    link: { href: 'http://horizon-place-culinary.com', label: 'horizon-place-culinary.com' },
+    logo: logoHorizonPlace,
   },
   {
-    name: 'Animaginary',
+    name: 'AirBnB Clone',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
+      'The Airbnb Clone simplifies travel planning by seamlessly connecting guests with unique, handpicked accommodations for a hassle-free booking experience.',
     link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    logo: logoAirbnb,
   },
   {
-    name: 'HelioStream',
+    name: 'Claw Puzzle',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Claw Puzzle transforms pet portraits into unique puzzles and apparel, combining AI creativity with personalized memories.',
+    link: { href: '#', label: 'claw-puzzle.com' },
+    logo: logoClawPuzzle,
   },
   {
-    name: 'cosmOS',
+    name: 'ShipReady',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
+      'ShipReady is a comprehensive, production-ready template for building Shopify apps using the Remix framework.',
     link: { href: '#', label: 'github.com' },
     logo: logoOpenShuttle,
   },
+  {
+    name: 'Move DB',
+    description:
+      'The Movie DB is your go-to platform for exploring the cinematic world, offering comprehensive and up-to-date details on movies, series, actors, and directors',
+    link: { href: 'https://davitpra.github.io/The-Movie-DB/', label: 'The-Movie-DB.com' },
+    logo: logoPlanetaria,
+  },
+
 ]
 
 function LinkIcon(props) {
@@ -59,13 +63,13 @@ function LinkIcon(props) {
 
 export const metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I’ve built trying to blend code, cuisine, and creativity.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
+      title="Things I’ve built trying to blend code, cuisine, and creativity."
       intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
     >
       <ul
