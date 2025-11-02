@@ -113,11 +113,11 @@ function MobileNavigation(props) {
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/articles">Articles</MobileNavItem>
+            <MobileNavItem href="/about">About me</MobileNavItem>
+            {/* <MobileNavItem href="/articles">Articles</MobileNavItem> */}
             <MobileNavItem href="/projects">Projects</MobileNavItem>
-            <MobileNavItem href="/speaking">Studies</MobileNavItem>
-            <MobileNavItem href="/experience">Experience</MobileNavItem>
+            {/* <MobileNavItem href="/speaking">Studies</MobileNavItem>
+            <MobileNavItem href="/experience">Experience</MobileNavItem> */}
           </ul>
         </nav>
       </PopoverPanel>
@@ -152,11 +152,11 @@ function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 ring-1 shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
+        <NavItem href="/about">About me</NavItem>
+        {/* <NavItem href="/articles">Articles</NavItem> */}
         <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/studies">Studies</NavItem>
-        <NavItem href="/experience">Experience</NavItem>
+        {/* <NavItem href="/studies">Studies</NavItem>
+        <NavItem href="/experience">Experience</NavItem> */}
       </ul>
     </nav>
   )
