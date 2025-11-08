@@ -4,6 +4,7 @@ import { createContext, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { ThemeProvider, useTheme } from 'next-themes'
 
+// Custom hook to get the previous value of a prop or state
 function usePrevious(value) {
   let ref = useRef()
 
@@ -14,6 +15,7 @@ function usePrevious(value) {
   return ref.current
 }
 
+// Watches for system theme changes and updates the theme accordingly
 function ThemeWatcher() {
   let { resolvedTheme, setTheme } = useTheme()
 
