@@ -1,5 +1,5 @@
 import { Providers } from '@/app/providers'
-import { Layout } from '@/components/Layout'
+import { Layout } from '@/components/layout/Layout'
 
 import '@/styles/tailwind.css'
 
@@ -7,10 +7,10 @@ export const metadata = {
   title: {
     template: 'David Prado',
     default:
-      'David Prado - Full Stack Developer and Entrepreneur',
+      'David Prado - Full Stack Developer',
   },
   description:
-    'David Prado is a Full Stack Developer and Entrepreneur. I am passionate about building products and services that help people.',
+    'David Prado is a Full Stack Developer. I am passionate about building products and services that help people.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

@@ -1,6 +1,6 @@
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from '@/components/ui/Card'
+import { Section } from '@/components/layout/Section'
+import { SimpleLayout } from '@/components/layout/SimpleLayout'
 
 function SpeakingSection({ children, ...props }) {
   return (
