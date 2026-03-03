@@ -1,9 +1,8 @@
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
-import logoHorizonPlace from '@/images/logos/horizon.png'
-import logoEmcyNegocios from '@/images/logos/emcy.png'
-import logoModernoEc from '@/images/logos/moderno.png'
+import { experience } from '@/lib/experience'
+import { FadeIn } from '@/components/about/FadeIn'
 
 function BriefcaseIcon(props) {
   return (
@@ -42,18 +41,10 @@ function ArrowDownIcon(props) {
 }
 
 function Role({ role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
-
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
-
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={role.logo} alt="" className="h-7 w-7 rounded-full object-cover" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -67,53 +58,26 @@ function Role({ role }) {
         <dt className="sr-only">Date</dt>
         <dd
           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${startLabel} until ${endLabel}`}
+          aria-label={`${role.start} until ${role.end}`}
         >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
+          <time>{role.start}</time>{' '}
           <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
+          <time>{role.end}</time>
         </dd>
       </dl>
     </li>
   )
 }
 
-const resume = [
-  {
-    company: 'Horizon Place',
-    title: 'Cooker / IT Support',
-    logo: logoHorizonPlace,
-    start: '2024',
-    end: {
-      label: 'Present',
-      dateTime: new Date().getFullYear().toString(),
-    },
-  },
-  {
-    company: 'Emcy Negocios',
-    title: 'Frontend Developer',
-    logo: logoEmcyNegocios,
-    start: '2022',
-    end: '2023',
-  },
-  {
-    company: 'Moderno Ec',
-    title: 'Ecommerce Manager',
-    logo: logoModernoEc,
-    start: '2020',
-    end: '2022',
-  },
-]
-
 export function Resume() {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <FadeIn delay={100} className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
+        {experience.map((role, roleIndex) => (
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
@@ -121,6 +85,6 @@ export function Resume() {
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
-    </div>
+    </FadeIn>
   )
 }

@@ -1,28 +1,27 @@
 import { Container } from '@/components/layout/Container'
-import { HomeArticle } from '@/components/home/HomeArticle'
 import { HeroSection } from '@/components/home/HeroSection'
 import { Newsletter } from '@/components/home/Newsletter'
-import { Photos } from '@/components/home/Photos'
 import { Resume } from '@/components/home/Resume'
-import { getAllArticles } from '@/lib/articles'
+import { TechStack } from '@/components/home/TechStack'
+import { Services } from '@/components/home/Services'
+import { FeaturedProjects } from '@/components/home/FeaturedProjects'
 
-export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 3)
-
+export default function Home() {
   return (
     <>
       <Container className="mt-9">
         <HeroSection />
       </Container>
-      <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <HomeArticle key={article.slug} article={article} />
-            ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+        <Services />
+      </Container>
+      <Container className="mt-16">
+        <TechStack />
+      </Container>
+      <Container className="mt-10">
+        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:gap-x-8">
+          <FeaturedProjects />
+          <div className="space-y-10">
             <Newsletter />
             <Resume />
           </div>

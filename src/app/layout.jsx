@@ -11,11 +11,7 @@ export const metadata = {
   },
   description:
     'David Prado is a Full Stack Developer. I am passionate about building products and services that help people.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
+
 }
 
 export default function RootLayout({ children }) {
