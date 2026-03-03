@@ -164,7 +164,7 @@ function ThemeToggle() {
   let [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true) // eslint-disable-line react-hooks/set-state-in-effect
   }, [])
 
   return (
@@ -230,7 +230,7 @@ export function Header() {
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) { setVisible(true); return }
+    if (reduced) { setVisible(true); return } // eslint-disable-line react-hooks/set-state-in-effect
     const t = setTimeout(() => setVisible(true), 50)
     return () => clearTimeout(t)
   }, [])

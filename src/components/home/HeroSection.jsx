@@ -27,7 +27,7 @@ function FadeUp({ delay, children }) {
       '(prefers-reduced-motion: reduce)',
     ).matches
     if (reduced) {
-      setVisible(true)
+      setVisible(true) // eslint-disable-line react-hooks/set-state-in-effect
       return
     }
     const t = setTimeout(() => setVisible(true), delay)

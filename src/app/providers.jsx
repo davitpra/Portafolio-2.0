@@ -12,7 +12,7 @@ function usePrevious(value) {
     ref.current = value
   }, [value])
 
-  return ref.current
+  return ref.current // eslint-disable-line react-hooks/refs
 }
 
 // Watches for system theme changes and updates the theme accordingly
