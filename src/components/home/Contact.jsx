@@ -25,11 +25,18 @@ function ChatIcon(props) {
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // TODO: wire up to email service (Resend, Formspree, EmailJS, etc.)
-    setSent(true)
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    })
+    if (res.ok) setSent(true)
   }
 
   return (
@@ -53,6 +60,8 @@ export function Contact() {
             placeholder="Your name"
             aria-label="Your name"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-2 text-sm shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-700/15 dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/10"
           />
           <input
@@ -60,6 +69,8 @@ export function Contact() {
             placeholder="Email address"
             aria-label="Email address"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-2 text-sm shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-700/15 dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/10"
           />
           <textarea
@@ -67,6 +78,8 @@ export function Contact() {
             aria-label="Message"
             required
             rows={4}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             className="w-full resize-none appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-2 text-sm shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-700/15 dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/10"
           />
           <Button type="submit" className="w-full">
