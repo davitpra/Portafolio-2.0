@@ -34,7 +34,7 @@ function RocketIcon(props) {
   )
 }
 
-const featured = projects.slice(0, 3)
+const featured = projects.slice(0,4)
 
 export function FeaturedProjects() {
   return (

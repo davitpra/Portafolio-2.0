@@ -54,7 +54,7 @@ export function HeroSection() {
       <FadeUp delay={items[0].delay}>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Hi, I&apos;m{' '}
-          <span className="text-blue-500 dark:text-blue-400">
+          <span className="text-blue-500 dark:text-blue-500">
             Davit
           </span>
         </h1>

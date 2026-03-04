@@ -23,7 +23,7 @@ function ChatIcon(props) {
   )
 }
 
-export function Newsletter() {
+export function Contact() {
   const [sent, setSent] = useState(false)
 
   function handleSubmit(e) {

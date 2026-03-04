@@ -1,6 +1,6 @@
 import { Container } from '@/components/layout/Container'
 import { HeroSection } from '@/components/home/HeroSection'
-import { Newsletter } from '@/components/home/Newsletter'
+import { Contact } from '@/components/home/Contact'
 import { Resume } from '@/components/home/Resume'
 import { TechStack } from '@/components/home/TechStack'
 import { Services } from '@/components/home/Services'
@@ -22,8 +22,8 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-2 lg:gap-x-8">
           <FeaturedProjects />
           <div className="space-y-10">
-            <Newsletter />
             <Resume />
+            <Contact />
           </div>
         </div>
       </Container>

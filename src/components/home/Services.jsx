@@ -4,7 +4,7 @@ const services = [
   {
     title: 'Web Development',
     description:
-      'Responsive, performant web applications built with Next.js and React — from landing pages to complex dashboards.',
+      'Creation of custom websites and applications with unique animations and interactive experiences.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
         <path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" className="stroke-blue-500 dark:stroke-blue-400" />
@@ -12,26 +12,16 @@ const services = [
     ),
   },
   {
-    title: 'Backend & APIs',
+    title: 'Custom Software Development',
     description:
-      'Scalable REST APIs and microservices with NestJS and Node.js. Clean architecture, typed, tested, and documented.',
+      'Internal tools, dashboards, process automation, and more.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
-        <path d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 6 0m-6 0H3m16.5 0a3 3 0 0 0 3-3m-3 3a3 3 0 1 1-6 0m6 0h-1.5m-12-3a3 3 0 0 1 3-3m9 3a3 3 0 0 0-3-3m-9 0h1.5m9 0H21m-9-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0v3" className="stroke-blue-500 dark:stroke-blue-400" />
+        <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" className="stroke-blue-500 dark:stroke-blue-400" />
       </svg>
     ),
   },
-  {
-    title: 'Database Design',
-    description:
-      'Efficient data modeling and query optimization using PostgreSQL and MongoDB. Schema design built to scale.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
-        <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" className="stroke-blue-500 dark:stroke-blue-400" />
-      </svg>
-    ),
-  },
-  {
+    {
     title: 'E-commerce',
     description:
       'Full-featured online stores with cart, payments, and inventory. Integrated with Stripe, MercadoPago, and more.',
@@ -42,22 +32,33 @@ const services = [
     ),
   },
   {
-    title: 'DevOps & Deployment',
+    title: 'AI Automation',
     description:
-      'Docker containers, CI/CD pipelines, and cloud deployments. Reliable infrastructure so your app stays up.',
+      'Streamlining e-commerce and digital marketing content creation through AI-powered workflows, cutting production cycles and scaling output.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
-        <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" className="stroke-blue-500 dark:stroke-blue-400" />
+        <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423z" className="stroke-blue-500 dark:stroke-blue-400" />
+      </svg>
+    ),
+  },
+
+  {
+    title: 'Design & Backend Architecture',
+    description:
+      'Building scalable, maintainable APIs with clean architecture for companies that need robust backends without a senior in-house team.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
+        <path d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122" className="stroke-blue-500 dark:stroke-blue-400" />
       </svg>
     ),
   },
   {
-    title: 'Technical Consulting',
+    title: 'Performance Optimization',
     description:
-      'Code reviews, architecture planning, and performance audits. Helping teams ship faster with fewer headaches.',
+      'Auditing and optimizing web performance and technical SEO to achieve 95+ Lighthouse scores and measurable growth in organic traffic.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-6 w-6">
-        <path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" className="stroke-blue-500 dark:stroke-blue-400" />
+        <path d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0-5.94-2.28m5.94 2.28-2.28 5.941" className="stroke-blue-500 dark:stroke-blue-400" />
       </svg>
     ),
   },
