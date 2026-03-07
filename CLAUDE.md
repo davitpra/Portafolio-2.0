@@ -22,33 +22,29 @@ NEXT_PUBLIC_SITE_URL=https://example.com
 
 ## Architecture
 
-Next.js 14 App Router portfolio site. All source code lives in `src/`.
+Next.js 16 App Router portfolio site. All source code lives in `src/`.
 
-**Routing (`src/app/`):** Standard App Router conventions. Pages: `/`, `/about`, `/articles`, `/articles/[slug]`, `/projects`, `/experience`, `/studies`, `/thank-you`, `/feed.xml` (RSS route handler).
+**Routing (`src/app/`):** Pages: `/`, `/about`, `/experience`, `/projects`, `/projects/[slug]`, `/thank-you`.
 
-**Blog articles (`src/app/articles/[slug]/page.mdx`):** Each article is a directory containing a `page.mdx` file. Articles export a named `article` object and a `metadata` object as frontmatter, then default-export a wrapper using `ArticleLayout`. The `src/lib/articles.js` module uses `fast-glob` to load and sort all articles at build time — this is used by the homepage (top 3), the articles listing page, and the RSS feed.
+**Portfolio data (`src/lib/`):**
+- `projects.js` — static array of 7 projects. Each entry has `name`, `slug`, `description`, `link`, `logo`, `role`, `year`, `stack[]`, and `body` (multi-paragraph string).
+- `experience.js` — static array of 4 roles. Each entry has `company`, `title`, `location`, `start`, `end`, `logo`, `summary`, `achievements[]`, and `stack[]`.
+- `formatDate.js` — single date formatting utility.
 
-MDX article structure:
-```js
-export const article = { author, date, title, description }
-export const metadata = { title, description }
-export default (props) => <ArticleLayout article={article} {...props} />
-```
+Project detail pages (`/projects/[slug]`) are generated statically via `generateStaticParams()` directly from the projects data array. No MDX or CMS — content lives entirely in these JS data files.
 
-**Styling:** Tailwind CSS v4 via `@tailwindcss/postcss`. Custom typography config in `src/styles/typography.js`. Prism syntax highlighting via `rehype-prism-plus` with styles in `src/styles/prism.css`. Dark mode is managed by `next-themes` with system preference detection.
+**Component organization (`src/components/`):** Feature-based subdirectories:
+- `layout/` — `Layout.jsx` (root wrapper), `Container.jsx` (three-layer responsive wrapper: `ContainerOuter`/`ContainerInner`/`Container`), `Header.jsx`, `Footer.jsx`, `Section.jsx`, `SimpleLayout.jsx`
+- `ui/` — `Card.jsx` (compound component with `.Link`, `.Title`, `.Description`, `.Cta`, `.Eyebrow` subcomponents), `Button.jsx`, `Prose.jsx`, `SocialIcons.jsx`
+- `home/` — section components for the homepage (`HeroSection`, `FeaturedProjects`, `Services`, `TechStack`, `Photos`, `Resume`, `Newsletter`)
+- `about/` — `FadeIn.jsx` (IntersectionObserver animation primitive) + page section components
+- `projects/` — `ProjectCard.jsx`, `ProjectsGrid.jsx`
+- `experience/` — `ExperienceEntry.jsx`
 
-**Path alias:** `@/*` maps to `./src/*`.
+**Animations:** No external animation library. Uses `IntersectionObserver` + CSS transitions with `cubic-bezier(0.22,1,0.36,1)` easing and staggered delays based on element index. All animated components check `prefers-reduced-motion`. The `FadeIn.jsx` in `src/components/about/` is the canonical scroll-animation primitive used across features.
 
-**Key components (`src/components/`):**
-- `Layout.jsx` — root wrapper (Header + Footer + content)
-- `Container.jsx` — responsive max-width wrapper with `ContainerOuter`/`ContainerInner` subcomponents
-- `ArticleLayout.jsx` — article page template with back-navigation using `AppContext`
-- `Card.jsx` — flexible card with `.Link`, `.Title`, `.Description`, `.Cta`, `.Eyebrow` subcomponents
-- `Prose.jsx` — typography container for MDX content (dark mode aware)
-- `SimpleLayout.jsx` — standard page layout (title + intro + children)
+**Styling:** Tailwind CSS v4 via `@tailwindcss/postcss`. Dark mode managed by `next-themes` with system preference detection. Syntax highlighting styles in `src/styles/prism.css`.
 
-**Providers (`src/app/providers.jsx`):** Client-side — `ThemeProvider` (next-themes), `AppContext` (tracks previous pathname for article back-button), `ThemeWatcher` (syncs system theme changes).
-
-**MDX config (`next.config.mjs`):** `@next/mdx` with `remark-gfm` and `rehype-prism-plus`. MDX files are treated as pages.
+**Providers (`src/app/providers.jsx`):** Client-side — `ThemeProvider` (next-themes), `AppContext` (tracks previous pathname for back-navigation), `ThemeWatcher` (syncs system theme changes).
 
 **Prettier:** single quotes, no semicolons, Tailwind class sorting (`prettier-plugin-tailwindcss`).

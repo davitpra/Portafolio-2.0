@@ -34,12 +34,12 @@ function RocketIcon(props) {
   )
 }
 
-const featured = projects.slice(0,4)
+const featured = projects.slice(0, 4)
 
 export function FeaturedProjects() {
   return (
     <FadeIn className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 className="flex items-center text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
         <RocketIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Featured Projects</span>
       </h2>
@@ -54,7 +54,7 @@ export function FeaturedProjects() {
           >
             <Link
               href={`/projects/${project.slug}`}
-              className="relative mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 transition hover:ring-blue-500/30 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:hover:border-blue-400/30"
+              className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 transition hover:ring-blue-500/30 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:hover:border-blue-400/30"
             >
               <Image
                 src={project.logo}
@@ -63,25 +63,46 @@ export function FeaturedProjects() {
                 unoptimized
               />
             </Link>
+
             <div className="min-w-0 flex-1">
-              <Link
-                href={`/projects/${project.slug}`}
-                className="text-sm font-medium text-zinc-900 transition hover:text-blue-500 dark:text-zinc-100 dark:hover:text-blue-400"
-              >
-                {project.name}
-              </Link>
-              <p className="mt-1 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+              <div className="flex items-baseline gap-2">
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="text-sm font-medium text-zinc-900 transition hover:text-blue-500 dark:text-zinc-100 dark:hover:text-blue-400"
+                >
+                  {project.name}
+                </Link>
+              </div>
+
+              {project.role && (
+                <p className="text-xs text-zinc-400 dark:text-zinc-500">{project.role}</p>
+              )}
+
+              <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
                 {project.description}
               </p>
-              <a
-                href={project.link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-zinc-400 transition hover:text-blue-500 dark:text-zinc-500 dark:hover:text-blue-400"
-              >
-                <LinkIcon className="h-3.5 w-3.5" />
-                {project.link.label}
-              </a>
+
+              <div className="mt-2 flex items-center gap-2">
+                <div className="flex min-w-0 flex-wrap gap-1">
+                  {project.stack.slice(0, 3).map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-auto shrink-0 inline-flex items-center gap-1 text-xs font-medium text-zinc-400 transition hover:text-blue-500 dark:text-zinc-500 dark:hover:text-blue-400"
+                >
+                  <LinkIcon className="h-3.5 w-3.5" />
+                  {project.link.label}
+                </a>
+              </div>
             </div>
           </FadeIn>
         ))}

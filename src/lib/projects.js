@@ -15,7 +15,6 @@ export const projects = [
     link: { href: 'https://famousify.art', label: 'famousify.art' },
     logo: logoFamousify,
     role: 'Full Stack Developer',
-    year: '2024',
     stack: ['Next.js', 'React', 'TypeScript', 'Shopify', 'AI/ML'],
     body: `Famousify is an AI-powered e-commerce platform built for pet lovers who want to turn their photos into personalized fine-art prints and custom apparel.
 
@@ -33,7 +32,6 @@ Key highlights include a drag-and-drop image uploader with live AI preview, dyna
     link: { href: 'https://www.delphiautoparts.com/', label: 'delphiautoparts.com' },
     logo: logoDelphi,
     role: 'Frontend Lead',
-    year: '2023',
     stack: ['Next.js', 'React', 'TypeScript', 'REST APIs', 'PostgreSQL'],
     body: `Delphi is a vehicle diagnostics and parts platform serving the automotive industry. I led the migration from a legacy monolithic frontend to a modern Next.js architecture.
 
@@ -51,7 +49,6 @@ The result was a faster, more maintainable codebase that the team could confiden
     link: { href: 'https://horizontal-place-diatrice.vercel.app/', label: 'horizon-place-culinary-demo.com' },
     logo: logoHorizonPlace,
     role: 'Full Stack Developer',
-    year: '2023',
     stack: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Tailwind CSS'],
     body: `Horizon Place is a culinary management app built for a senior living community. Residents use it to browse the weekly menu, customize their meal preferences, and place orders for delivery to their unit.
 
@@ -70,7 +67,6 @@ The app reduced phone-based ordering by 70% and freed up significant staff time 
     logo: logoClawPuzzle,
     logoClassName: 'invert dark:invert-0',
     role: 'Full Stack Developer',
-    year: '2024',
     stack: ['Next.js', 'React', 'Shopify', 'AI/ML', 'Node.js'],
     body: `Claw Puzzle is a personalized product platform that turns pet photos into custom jigsaw puzzles and apparel. Think Famousify's sibling — same AI-first approach, different product category.
 
@@ -88,7 +84,6 @@ A major focus was the order configurator: users can choose puzzle piece count, p
     link: { href: 'https://github.com/davitpra/Inmoplus', label: 'github.com' },
     logo: logoAirbnb,
     role: 'Full Stack Developer',
-    year: '2022',
     stack: ['React', 'Node.js', 'PostgreSQL', 'Express', 'Tailwind CSS'],
     body: `InmoPlus is a full-stack property rental platform inspired by Airbnb. Built as a portfolio project to demonstrate end-to-end product development skills — from database design to UI polish.
 
@@ -106,7 +101,6 @@ This project deepened my understanding of relational data modeling, specifically
     link: { href: 'https://github.com/davitpra/COD-shipready', label: 'github.com' },
     logo: logoOpenShuttle,
     role: 'Developer',
-    year: '2023',
     stack: ['Remix', 'Shopify', 'TypeScript', 'Prisma', 'PostgreSQL'],
     body: `ShipReady is an open-source starter template for building production-grade Shopify apps with Remix. It eliminates the boilerplate that slows down the first few days of any new Shopify app project.
 
@@ -124,7 +118,6 @@ Developers can go from zero to a working, installable Shopify app in under 30 mi
     link: { href: 'https://davitpra.github.io/The-Movie-DB/', label: 'The-Movie-DB.com' },
     logo: logoPlanetaria,
     role: 'Frontend Developer',
-    year: '2021',
     stack: ['JavaScript', 'React', 'TMDB API', 'CSS Modules'],
     body: `Movie DB is a film and series discovery app built on top of The Movie Database (TMDB) public API. It was one of my earliest production-quality React projects and focused heavily on API integration and UI polish.
 
