@@ -1,4 +1,27 @@
+'use client'
+
+import { useState } from 'react'
+
 import { FadeIn } from '@/components/about/FadeIn'
+
+function SquaresIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
+    </svg>
+  )
+}
 
 const services = [
   {
@@ -64,22 +87,22 @@ const services = [
   },
 ]
 
+const INITIAL_COUNT = 4
+
 export function Services() {
+  const [expanded, setExpanded] = useState(false)
+
+  const visible = expanded ? services : services.slice(0, INITIAL_COUNT)
+  const hidden = services.length - INITIAL_COUNT
+
   return (
-    <div>
-      <FadeIn className="mb-10">
-        <p className="mb-2 text-xs font-semibold tracking-widest text-blue-500 uppercase dark:text-blue-400">
-          Services
-        </p>
-        <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
-          What I can do for you
-        </h2>
-        <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-          End-to-end development, from idea to production.
-        </p>
-      </FadeIn>
-      <div className="grid grid-cols-1 gap-4">
-        {services.map(({ title, description, icon }, index) => (
+    <FadeIn className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <SquaresIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Services</span>
+      </h2>
+      <div className="mt-6 grid grid-cols-1 gap-4">
+        {visible.map(({ title, description, icon }, index) => (
           <FadeIn
             key={title}
             delay={index * 80}
@@ -97,6 +120,29 @@ export function Services() {
           </FadeIn>
         ))}
       </div>
-    </div>
+
+      {!expanded && hidden > 0 && (
+        <button
+          onClick={() => setExpanded(true)}
+          className="group mt-4 flex w-full items-center justify-center gap-1.5 rounded-md border border-zinc-900/10 px-3 py-2 text-sm font-medium text-zinc-600 transition hover:border-blue-500/30 hover:text-blue-500 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-blue-400/30 dark:hover:text-blue-400"
+        >
+          Show {hidden} more
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            className="h-4 w-4 transition-transform group-hover:translate-y-0.5"
+          >
+            <path
+              d="M4.75 6.75 8 10.25l3.25-3.5"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="stroke-current"
+            />
+          </svg>
+        </button>
+      )}
+    </FadeIn>
   )
 }
