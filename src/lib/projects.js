@@ -1,3 +1,6 @@
+import fs from 'fs'
+import path from 'path'
+
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
@@ -6,23 +9,34 @@ import logoClawPuzzle from '@/images/logos/claw-puzzle.png'
 import logoFamousify from '@/images/logos/famousify.png'
 import logoDelphi from '@/images/logos/delphi.png'
 
+
+const famousifyBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/famoustify.md'),
+  'utf-8'
+)
+
+const delphiBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/dephi.md'),
+  'utf-8'
+)
+
+const horizonPlaceBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/horizonPlace.md'),
+  'utf-8'
+)
+
 export const projects = [
   {
     name: 'Famousify',
     slug: 'famousify',
     description:
-      'AI-powered e-commerce platform that transforms pet portraits into fine-art prints and custom apparel using generative image models and automated Shopify workflows.',
+      'AI-powered pet portrait e-commerce platform — users upload a photo, an AI generates a styled fine-art portrait, and it ships as a physical product worldwide via automated print-on-demand fulfillment.',
     link: { href: 'https://famousify.art', label: 'famousify.art' },
     logo: logoFamousify,
-    role: 'Full Stack Developer',
-    stack: ['Next.js', 'React', 'TypeScript', 'Shopify', 'AI/ML'],
-    body: `Famousify is an AI-powered e-commerce platform built for pet lovers who want to turn their photos into personalized fine-art prints and custom apparel.
-
-The core challenge was integrating generative image models into a seamless Shopify checkout flow. I built a pipeline that accepts user-uploaded pet portraits, sends them through an AI image generation service, and delivers print-ready files automatically.
-
-The storefront is built with Next.js and deployed on Vercel, with Shopify handling the commerce layer. Custom Shopify webhooks trigger automated workflows for order fulfillment, keeping human intervention to a minimum.
-
-Key highlights include a drag-and-drop image uploader with live AI preview, dynamic product generation per upload, and a fully automated production pipeline from order to delivery.`,
+    role: 'Full-Stack Developer',
+    year: 'Nov 2025 – Jan 2026',
+    stack: ['Shopify', 'Liquid', 'JavaScript', 'fal.ai', 'Stable Diffusion', 'Gelato API', 'Tailwind CSS'],
+    body: famousifyBody,
   },
   {
     name: 'Delphi',
@@ -33,13 +47,7 @@ Key highlights include a drag-and-drop image uploader with live AI preview, dyna
     logo: logoDelphi,
     role: 'Frontend Lead',
     stack: ['Next.js', 'React', 'TypeScript', 'REST APIs', 'PostgreSQL'],
-    body: `Delphi is a vehicle diagnostics and parts platform serving the automotive industry. I led the migration from a legacy monolithic frontend to a modern Next.js architecture.
-
-The existing system was built on an aging stack with no type safety, slow build times, and a poor developer experience. The goal was to modernize the frontend while maintaining 100% feature parity and zero downtime for existing customers.
-
-I introduced TypeScript throughout, restructured the component hierarchy for reusability, and implemented proper data-fetching patterns using Next.js App Router. Performance improved significantly — Core Web Vitals scores went from poor to good across all pages.
-
-The result was a faster, more maintainable codebase that the team could confidently iterate on. Page load times dropped by over 40% and the build pipeline went from 8 minutes to under 2.`,
+    body: delphiBody,
   },
   {
     name: 'Horizon Place',
@@ -50,13 +58,7 @@ The result was a faster, more maintainable codebase that the team could confiden
     logo: logoHorizonPlace,
     role: 'Full Stack Developer',
     stack: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Tailwind CSS'],
-    body: `Horizon Place is a culinary management app built for a senior living community. Residents use it to browse the weekly menu, customize their meal preferences, and place orders for delivery to their unit.
-
-The main challenge was designing a UI that worked for an older demographic — large text, high contrast, minimal steps, and forgiving touch targets. Every screen was tested with actual residents before launch.
-
-The backend is a NestJS API connected to PostgreSQL, handling dietary restriction tracking, order queuing, and kitchen notification routing. Staff use a separate admin dashboard to manage menus, view daily order summaries, and flag dietary alerts.
-
-The app reduced phone-based ordering by 70% and freed up significant staff time during meal preparation windows.`,
+    body: horizonPlaceBody,
   },
   {
     name: 'Claw Puzzle',
