@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
 
 import { ArticleLayout } from '@/components/ArticleLayout'
 import { projects } from '@/lib/projects'
@@ -22,13 +23,9 @@ export default async function ProjectPage({ params }) {
   const project = projects.find((p) => p.slug === slug)
   if (!project) notFound()
 
-  const paragraphs = project.body.trim().split('\n\n')
-
   return (
     <ArticleLayout project={project}>
-      {paragraphs.map((para, i) => (
-        <p key={i}>{para}</p>
-      ))}
+      <ReactMarkdown>{project.body}</ReactMarkdown>
     </ArticleLayout>
   )
 }

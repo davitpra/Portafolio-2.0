@@ -99,7 +99,6 @@ export function ArticleLayout({ project, children }) {
               {/* Divider */}
               <div className="mt-8 border-t border-zinc-100 dark:border-zinc-700/40" />
             </header>
-
             {/* Body */}
             <Prose className="mt-8">{children}</Prose>
           </article>
