@@ -75,11 +75,6 @@ export function HeroSection() {
         <div className="mt-8 flex items-center gap-6">
           <div className="flex gap-4">
             <SocialLink
-              href="https://www.instagram.com/davit_prado/"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
               href="https://github.com/davitpra"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
@@ -88,6 +83,11 @@ export function HeroSection() {
               href="https://www.linkedin.com/in/davitprado/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://www.instagram.com/davit_prado/"
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
             />
           </div>
           <div className="h-4 w-px bg-zinc-200 dark:bg-zinc-700" />
