@@ -100,6 +100,17 @@ export function HeroSection() {
               →
             </span>
           </Link>
+                    <div className="h-4 w-px bg-zinc-200 dark:bg-zinc-700" />
+          <Link
+            href="/Full Stack Engineer - David Prado.pdf"
+            download="Full Stack Engineer - David Prado.pdf"
+            className="group flex items-center gap-1.5 text-sm font-medium text-zinc-600 transition hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-400"
+          >
+            Download CV
+            <span className="transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </Link>
         </div>
       </FadeUp>
     </div>
