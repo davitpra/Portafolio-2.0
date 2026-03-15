@@ -50,7 +50,7 @@ function FadeUp({ delay, children }) {
 
 export function HeroSection() {
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-2xl my-24">
       <FadeUp delay={items[0].delay}>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Hi, I&apos;m{' '}
