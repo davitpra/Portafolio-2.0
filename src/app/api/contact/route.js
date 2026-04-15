@@ -3,7 +3,23 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request) {
-  const { name, email, message } = await request.json()
+  let body
+  try {
+    body = await request.json()
+  } catch {
+    return Response.json({ error: 'Invalid request body' }, { status: 400 })
+  }
+
+  const { name, email, message } = body
+
+  if (!name || !email || !message) {
+    return Response.json({ error: 'Missing required fields' }, { status: 400 })
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return Response.json({ error: 'Invalid email address' }, { status: 400 })
+  }
 
   await resend.emails.send({
     from: 'noreply@contact.davitprado.com',
