@@ -48,3 +48,10 @@ Project detail pages (`/projects/[slug]`) are generated statically via `generate
 **Providers (`src/app/providers.jsx`):** Client-side — `ThemeProvider` (next-themes), `AppContext` (tracks previous pathname for back-navigation), `ThemeWatcher` (syncs system theme changes).
 
 **Prettier:** single quotes, no semicolons, Tailwind class sorting (`prettier-plugin-tailwindcss`).
+
+## Agent skills
+
+Project skills live in `.agents/skills/` (there is no `.claude/` directory). Read the relevant `SKILL.md` before working in its area:
+- `.agents/skills/ui-animation/` — motion, easing, timing, reduced-motion (see also `examples.md`)
+- `.agents/skills/vercel-react-best-practices/` — React/Next.js performance; individual rules in `rules/`
+- `.agents/skills/web-design-guidelines/` — UI, accessibility and UX review
