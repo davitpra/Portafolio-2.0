@@ -26,41 +26,7 @@ const horizonPlaceBody = fs.readFileSync(
 )
 
 export const projects = [
-  {
-    name: 'Famousify',
-    slug: 'famousify',
-    description:
-      'AI-powered pet portrait e-commerce platform — users upload a photo, an AI generates a styled fine-art portrait, and it ships as a physical product worldwide via automated print-on-demand fulfillment.',
-    link: { href: 'https://famousify.art', label: 'famousify.art' },
-    logo: logoFamousify,
-    role: 'Full-Stack Developer',
-    year: 'Nov 2025 – Jan 2026',
-    stack: ['Shopify', 'Liquid', 'JavaScript', 'fal.ai', 'Stable Diffusion', 'Gelato API', 'Tailwind CSS'],
-    body: famousifyBody,
-  },
-  {
-    name: 'Delphi',
-    slug: 'delphi',
-    description:
-      'Vehicle diagnostics platform for the automotive industry — migrated from a legacy system to a modern Next.js architecture, improving performance, maintainability, and scalability.',
-    link: { href: 'https://www.delphiautoparts.com/', label: 'delphiautoparts.com' },
-    logo: logoDelphi,
-    role: 'Frontend Lead',
-    stack: ['Next.js', 'React', 'TypeScript', 'REST APIs', 'PostgreSQL'],
-    body: delphiBody,
-  },
-  {
-    name: 'Horizon Place',
-    slug: 'horizon-place',
-    description:
-      'The Horizon Place Culinary App streamlines meal ordering, elevating the dining experience for every resident.',
-    link: { href: 'https://horizontal-place-diatrice.vercel.app/', label: 'horizon-place-culinary-demo.com' },
-    logo: logoHorizonPlace,
-    role: 'Full Stack Developer',
-    stack: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Tailwind CSS'],
-    body: horizonPlaceBody,
-  },
-  {
+    {
     name: 'Claw Puzzle',
     slug: 'claw-puzzle',
     description:
@@ -77,6 +43,41 @@ Users upload a photo of their pet, choose a product type (puzzle, t-shirt, hoodi
 Built on top of Shopify with a Next.js storefront, the platform shares some infrastructure with Famousify but is designed for a different customer journey — gift purchases rather than collector prints.
 
 A major focus was the order configurator: users can choose puzzle piece count, paper finish, and apparel sizing all from a single interactive screen before checking out.`,
+  },
+  {
+    name: 'Delphi',
+    slug: 'delphi',
+    description:
+      'Vehicle diagnostics platform for the automotive industry — migrated from a legacy system to a modern Next.js architecture, improving performance, maintainability, and scalability.',
+    link: { href: 'https://www.delphiautoparts.com/', label: 'delphiautoparts.com' },
+    logo: logoDelphi,
+    role: 'Frontend Lead',
+    stack: ['Next.js', 'React', 'TypeScript', 'REST APIs', 'PostgreSQL'],
+    body: delphiBody,
+  },
+  {
+    name: 'Meal Ordering System',
+    slug: 'meal-ordering-system',
+    description:
+      'The Meal Ordering System simplifies meal selection and ordering, providing a seamless experience for residents to enjoy their favorite dishes.',
+    link: { href: 'https://meal-ordering-system.vercel.app/', label: 'meal-ordering-system.com' },
+    logo: logoHorizonPlace,
+    role: 'Full Stack Developer',
+    stack: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Tailwind CSS'],
+    body: horizonPlaceBody,
+  },
+
+    {
+    name: 'Famousify',
+    slug: 'famousify',
+    description:
+      'AI-powered pet portrait e-commerce platform — users upload a photo, an AI generates a styled fine-art portrait, and it ships as a physical product worldwide via automated print-on-demand fulfillment.',
+    link: { href: 'https://famousify.art', label: 'famousify.art' },
+    logo: logoFamousify,
+    role: 'Full-Stack Developer',
+    year: 'Nov 2025 – Jan 2026',
+    stack: ['Shopify', 'Liquid', 'JavaScript', 'fal.ai', 'Stable Diffusion', 'Gelato API', 'Tailwind CSS'],
+    body: famousifyBody,
   },
   {
     name: 'AirBnB Clone',
