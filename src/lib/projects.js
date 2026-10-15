@@ -25,6 +25,12 @@ const horizonPlaceBody = fs.readFileSync(
   'utf-8'
 )
 
+const clawPuzzleBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/clawPuzzle.md'),
+  'utf-8'
+)
+
+
 export const projects = [
     {
     name: 'Claw Puzzle',
@@ -36,13 +42,7 @@ export const projects = [
     logoClassName: 'invert dark:invert-0',
     role: 'Full Stack Developer',
     stack: ['Next.js', 'React', 'Shopify', 'AI/ML', 'Node.js'],
-    body: `Claw Puzzle is a personalized product platform that turns pet photos into custom jigsaw puzzles and apparel. Think Famousify's sibling — same AI-first approach, different product category.
-
-Users upload a photo of their pet, choose a product type (puzzle, t-shirt, hoodie), and the platform generates a stylized version of their photo through AI. The result is a unique product that feels handcrafted.
-
-Built on top of Shopify with a Next.js storefront, the platform shares some infrastructure with Famousify but is designed for a different customer journey — gift purchases rather than collector prints.
-
-A major focus was the order configurator: users can choose puzzle piece count, paper finish, and apparel sizing all from a single interactive screen before checking out.`,
+    body: clawPuzzleBody,
   },
   {
     name: 'Delphi',
