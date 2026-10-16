@@ -8,36 +8,40 @@ import logoHorizonPlace from '@/images/logos/horizon.png'
 import logoClawPuzzle from '@/images/logos/claw-puzzle.png'
 import logoFamousify from '@/images/logos/famousify.png'
 import logoDelphi from '@/images/logos/delphi.png'
-
+import logoInspectionSystem from '@/images/logos/inspection-system.png'
 
 const famousifyBody = fs.readFileSync(
   path.join(process.cwd(), 'src/docs/famoustify.md'),
-  'utf-8'
+  'utf-8',
 )
 
 const delphiBody = fs.readFileSync(
   path.join(process.cwd(), 'src/docs/dephi.md'),
-  'utf-8'
+  'utf-8',
 )
 
 const horizonPlaceBody = fs.readFileSync(
   path.join(process.cwd(), 'src/docs/horizonPlace.md'),
-  'utf-8'
+  'utf-8',
 )
 
 const clawPuzzleBody = fs.readFileSync(
   path.join(process.cwd(), 'src/docs/clawPuzzle.md'),
-  'utf-8'
+  'utf-8',
 )
 
+const inspectionSystemBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/inspectionSystem.md'),
+  'utf-8',
+)
 
 export const projects = [
-    {
+  {
     name: 'Claw Puzzle',
     slug: 'claw-puzzle',
     description:
       'Claw Puzzle transforms pet portraits into unique puzzles and apparel, combining AI creativity with personalized memories.',
-    link: { href: '#', label: 'claw-puzzle.com' },
+    link: { href: 'https://www.clawpuzzle.com/', label: 'claw-puzzle.com' },
     logo: logoClawPuzzle,
     logoClassName: 'invert dark:invert-0',
     role: 'Full Stack Developer',
@@ -45,11 +49,41 @@ export const projects = [
     body: clawPuzzleBody,
   },
   {
+    name: 'Offline Inspection System',
+    slug: 'offline-inspection-system',
+    description:
+      'An offline-first workplace safety platform that turns field inspections into traceable, verified corrective action.',
+    link: { href: '#', label: 'offline-inspection-system.com' },
+    logo: logoInspectionSystem,
+    role: 'Full Stack Developer',
+    stack: [
+      'React 19',
+      'TypeScript',
+      'Vite',
+      'TanStack Router',
+      'TanStack Query',
+      'Dexie',
+      'Serwist',
+      'NestJS 11',
+      'PostgreSQL 17',
+      'Drizzle ORM',
+      'pg-boss',
+      'Zod',
+      'S3-compatible storage',
+      'Vitest',
+      'Testcontainers',
+    ],
+    body: inspectionSystemBody,
+  },
+  {
     name: 'Delphi',
     slug: 'delphi',
     description:
       'Vehicle diagnostics platform for the automotive industry — migrated from a legacy system to a modern Next.js architecture, improving performance, maintainability, and scalability.',
-    link: { href: 'https://www.delphiautoparts.com/', label: 'delphiautoparts.com' },
+    link: {
+      href: 'https://www.delphiautoparts.com/',
+      label: 'delphiautoparts.com',
+    },
     logo: logoDelphi,
     role: 'Frontend Lead',
     stack: ['Next.js', 'React', 'TypeScript', 'REST APIs', 'PostgreSQL'],
@@ -60,14 +94,17 @@ export const projects = [
     slug: 'meal-ordering-system',
     description:
       'The Meal Ordering System simplifies meal selection and ordering, providing a seamless experience for residents to enjoy their favorite dishes.',
-    link: { href: 'https://meal-ordering-system.vercel.app/', label: 'meal-ordering-system.com' },
+    link: {
+      href: 'https://meal-ordering-system.vercel.app/',
+      label: 'meal-ordering-system.com',
+    },
     logo: logoHorizonPlace,
     role: 'Full Stack Developer',
     stack: ['Next.js', 'React', 'NestJS', 'PostgreSQL', 'Tailwind CSS'],
     body: horizonPlaceBody,
   },
 
-    {
+  {
     name: 'Famousify',
     slug: 'famousify',
     description:
@@ -76,7 +113,15 @@ export const projects = [
     logo: logoFamousify,
     role: 'Full-Stack Developer',
     year: 'Nov 2025 – Jan 2026',
-    stack: ['Shopify', 'Liquid', 'JavaScript', 'fal.ai', 'Stable Diffusion', 'Gelato API', 'Tailwind CSS'],
+    stack: [
+      'Shopify',
+      'Liquid',
+      'JavaScript',
+      'fal.ai',
+      'Stable Diffusion',
+      'Gelato API',
+      'Tailwind CSS',
+    ],
     body: famousifyBody,
   },
   {
@@ -101,7 +146,10 @@ This project deepened my understanding of relational data modeling, specifically
     slug: 'shipready',
     description:
       'ShipReady is a comprehensive, production-ready template for building Shopify apps using the Remix framework.',
-    link: { href: 'https://github.com/davitpra/COD-shipready', label: 'github.com' },
+    link: {
+      href: 'https://github.com/davitpra/COD-shipready',
+      label: 'github.com',
+    },
     logo: logoOpenShuttle,
     role: 'Developer',
     stack: ['Remix', 'Shopify', 'TypeScript', 'Prisma', 'PostgreSQL'],
@@ -118,7 +166,10 @@ Developers can go from zero to a working, installable Shopify app in under 30 mi
     slug: 'movie-db',
     description:
       'The Movie DB is your go-to platform for exploring the cinematic world, offering comprehensive and up-to-date details on movies, series, actors, and directors.',
-    link: { href: 'https://davitpra.github.io/The-Movie-DB/', label: 'The-Movie-DB.com' },
+    link: {
+      href: 'https://davitpra.github.io/The-Movie-DB/',
+      label: 'The-Movie-DB.com',
+    },
     logo: logoPlanetaria,
     role: 'Frontend Developer',
     stack: ['JavaScript', 'React', 'TMDB API', 'CSS Modules'],
