@@ -36,6 +36,11 @@ const inspectionSystemBody = fs.readFileSync(
   'utf-8',
 )
 
+const clawAndSoulBody = fs.readFileSync(
+  path.join(process.cwd(), 'src/docs/clawAndSoul.md'),
+  'utf-8',
+)
+
 export const projects = [
   {
     name: 'Claw Puzzle',
@@ -79,12 +84,25 @@ export const projects = [
   {
     name: 'Claw & Soul',
     slug: 'claw-and-soul',
-    description: 'Description.',
+    description:
+      'An AI-powered platform that turns pet photos into personalized artwork and print-ready paint-by-numbers designs.',
     link: { href: 'https://www.clawandsoul.com/', label: 'claw-and-soul.com' },
     logo: logoClawAndSoul,
     role: 'Full Stack Developer',
-    stack: ['stack'],
-    body: clawPuzzleBody,
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'Redis',
+      'BullMQ',
+      'Shopify',
+      'Fal.ai',
+      'Cloudinary',
+    ],
+    body: clawAndSoulBody,
   },
   {
     name: 'Delphi',
