@@ -1,14 +1,15 @@
 import fs from 'fs'
 import path from 'path'
 
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoHorizonPlace from '@/images/logos/horizon.png'
-import logoClawPuzzle from '@/images/logos/claw-puzzle.png'
-import logoFamousify from '@/images/logos/famousify.png'
-import logoDelphi from '@/images/logos/delphi.png'
-import logoInspectionSystem from '@/images/logos/inspection-system.png'
+const logoAirbnb = '/images/logos/airbnb.svg'
+const logoPlanetaria = '/images/logos/planetaria.svg'
+const logoOpenShuttle = '/images/logos/open-shuttle.svg'
+const logoHorizonPlace = '/images/logos/horizon.png'
+const logoClawPuzzle = '/images/logos/claw-puzzle.png'
+const logoFamousify = '/images/logos/famousify.png'
+const logoDelphi = '/images/logos/delphi.png'
+const logoInspectionSystem = '/images/logos/inspection-system.png'
+const logoClawAndSoul = '/images/logos/clawAndSoul.svg'
 
 const famousifyBody = fs.readFileSync(
   path.join(process.cwd(), 'src/docs/famoustify.md'),
@@ -74,6 +75,16 @@ export const projects = [
       'Testcontainers',
     ],
     body: inspectionSystemBody,
+  },
+  {
+    name: 'Claw & Soul',
+    slug: 'claw-and-soul',
+    description: 'Description.',
+    link: { href: 'https://www.clawandsoul.com/', label: 'claw-and-soul.com' },
+    logo: logoClawAndSoul,
+    role: 'Full Stack Developer',
+    stack: ['stack'],
+    body: clawPuzzleBody,
   },
   {
     name: 'Delphi',

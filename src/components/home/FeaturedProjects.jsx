@@ -59,6 +59,8 @@ export function FeaturedProjects() {
               <Image
                 src={project.logo}
                 alt=""
+                width={28}
+                height={28}
                 className={`h-7 w-7 rounded-full object-cover ${project.logoClassName ?? ''}`}
                 unoptimized
               />
@@ -75,14 +77,16 @@ export function FeaturedProjects() {
               </div>
 
               {project.role && (
-                <p className="text-xs text-zinc-400 dark:text-zinc-500">{project.role}</p>
+                <p className="text-xs text-zinc-400 dark:text-zinc-500">
+                  {project.role}
+                </p>
               )}
 
               <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
                 {project.description}
               </p>
 
-              <div className="hidden sm:flex mt-2  items-center gap-2">
+              <div className="mt-2 hidden items-center gap-2 sm:flex">
                 <div className="flex min-w-0 flex-wrap gap-1">
                   {project.stack.slice(0, 3).map((tech) => (
                     <span
@@ -97,7 +101,7 @@ export function FeaturedProjects() {
                   href={project.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto shrink-0 inline-flex items-center gap-1 text-xs font-medium text-zinc-400 transition hover:text-blue-500 dark:text-zinc-500 dark:hover:text-blue-400"
+                  className="ml-auto inline-flex shrink-0 items-center gap-1 text-xs font-medium text-zinc-400 transition hover:text-blue-500 dark:text-zinc-500 dark:hover:text-blue-400"
                 >
                   <LinkIcon className="h-3.5 w-3.5" />
                   {project.link.label}
@@ -114,7 +118,9 @@ export function FeaturedProjects() {
           className="group mt-6 flex items-center justify-center gap-1.5 rounded-md border border-zinc-900/10 px-3 py-2 text-sm font-medium text-zinc-600 transition hover:border-blue-500/30 hover:text-blue-500 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-blue-400/30 dark:hover:text-blue-400"
         >
           View all projects
-          <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          <span className="transition-transform group-hover:translate-x-0.5">
+            →
+          </span>
         </Link>
       </FadeIn>
     </FadeIn>

@@ -27,7 +27,9 @@ export function ExperienceEntry({ role, isLast, index }) {
     const el = ref.current
     if (!el) return
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
     if (reduced) {
       el.style.opacity = '1'
       return
@@ -59,15 +61,22 @@ export function ExperienceEntry({ role, isLast, index }) {
     >
       {/* Date column — desktop only */}
       <div className="hidden w-40 shrink-0 pt-2.5 lg:flex lg:flex-col lg:items-end lg:gap-1">
-        <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium tabular-nums text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+        <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-500 tabular-nums dark:bg-zinc-800 dark:text-zinc-400">
           {role.start} — {role.end}
         </span>
       </div>
 
       {/* Timeline icon + line */}
       <div className="flex flex-col items-center">
-        <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-          <Image src={role.logo} alt={role.company} className="h-7 w-7 rounded-2xl" unoptimized />
+        <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <Image
+            src={role.logo}
+            alt={role.company}
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-2xl"
+            unoptimized
+          />
         </div>
         {!isLast && (
           <div className="mt-3 w-px flex-1 bg-zinc-200 dark:bg-zinc-700/60" />
@@ -84,7 +93,7 @@ export function ExperienceEntry({ role, isLast, index }) {
             <LocationIcon className="h-3.5 w-3.5 fill-zinc-300 stroke-zinc-400 dark:fill-zinc-600 dark:stroke-zinc-500" />
             {role.location}
           </span>
-          <span className="ml-auto text-xs tabular-nums text-zinc-400 dark:text-zinc-500 lg:hidden">
+          <span className="ml-auto text-xs text-zinc-400 tabular-nums lg:hidden dark:text-zinc-500">
             {role.start} — {role.end}
           </span>
         </div>
@@ -99,7 +108,10 @@ export function ExperienceEntry({ role, isLast, index }) {
 
         <ul className="mt-3 space-y-2">
           {role.achievements.map((item, i) => (
-            <li key={i} className="flex gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <li
+              key={i}
+              className="flex gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+            >
               <span className="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-blue-500" />
               {item}
             </li>

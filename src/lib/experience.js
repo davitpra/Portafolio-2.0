@@ -1,7 +1,7 @@
-import logoSelfEmployed from '@/images/logos/indpendent_contractor_logo.jpg'
-import logoRadstad from '@/images/logos/Randstand_logo.jpg'
-import logoKruger from '@/images/logos/krugercorp_logo.jpg'
-import logoIdukay from '@/images/logos/idukayedu_logo.jpg'
+const logoSelfEmployed = '/images/logos/indpendent_contractor_logo.jpg'
+const logoRadstad = '/images/logos/Randstand_logo.jpg'
+const logoKruger = '/images/logos/krugercorp_logo.jpg'
+const logoIdukay = '/images/logos/idukayedu_logo.jpg'
 
 export const experience = [
   {
@@ -19,7 +19,20 @@ export const experience = [
       'Claw & Soul (Technical Co-founder): Selected for Fanshawe College’s Entrepreneurship & Innovation Program. Designed an async AI pipeline with BullMQ/Redis (vision-model photo analysis, dynamic prompting, fal.ai generation) with interchangeable art styles via the Strategy pattern.',
       'Meal Ordering System: While working in the care home’s nutrition department, built a full-stack app to replace paper meal orders. Piloted with 60+ residents, 14 tables and two shifts, surfacing allergies, diets and preferences in real time and saving 10–20 minutes per service; approved by management and the regional coordinator.',
     ],
-    stack: ['Next.js', 'React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Prisma', 'Drizzle', 'BullMQ', 'Redis', 'fal.ai', 'Shopify', 'Docker'],
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'Drizzle',
+      'BullMQ',
+      'Redis',
+      'fal.ai',
+      'Shopify',
+      'Docker',
+    ],
   },
   {
     company: 'Randstad (Contract)',
@@ -35,7 +48,15 @@ export const experience = [
       'Integrated REST APIs with Axios and React Query for the vehicle parts catalog and store locator, tuning caching to cut redundant requests.',
       'Wrote unit tests with Jest and E2E tests with Cypress to keep the migration stable across releases.',
     ],
-    stack: ['Next.js', 'React', 'TypeScript', 'React Query', 'Axios', 'Jest', 'Cypress'],
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'React Query',
+      'Axios',
+      'Jest',
+      'Cypress',
+    ],
   },
   {
     company: 'Kruger Corp',
