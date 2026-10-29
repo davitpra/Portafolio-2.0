@@ -2,7 +2,7 @@
 
 I designed and built Claw & Soul, a full-stack platform that transforms pet photos into personalized AI artwork and paint-by-numbers designs. The experience takes customers from photo upload and style selection through AI generation, browser-based image processing, printable downloads, and optional canvas checkout. I was responsible for the product architecture, frontend, backend, AI pipeline, commerce integrations, and operational tooling.
 
-![Claw & Soul product experience](frontend/public/landing/hero-main-v2.webp)
+![Claw & Soul product experience](/images/projects/clawAndSoul/hero-main-v2.png)
 
 ---
 
@@ -29,7 +29,7 @@ I built an asynchronous image-generation pipeline that analyzes uploaded pet pho
 
 BullMQ and Redis move generation outside the request lifecycle, while persisted status updates let the frontend report progress and recover from failures. Generation credits are managed through an append-only ledger with atomic spending, idempotent grants, and automatic refunds when a job fails.
 
-![AI-generated pet artwork](frontend/public/process/3.%20Final%20Art.png)
+![AI-generated pet artwork](/images/projects/clawAndSoul/Final%20Art.png)
 
 ### 2. Paint-by-Numbers Studio
 
@@ -37,7 +37,7 @@ I developed a browser-based editor that converts artwork into a print-ready pain
 
 Because this work is CPU-intensive, the pipeline yields between processing phases and reports progress to keep the interface responsive. Users can customize the result and export it as SVG, PNG, or a printable PDF with a paint-mixing guide based on spectral color calculations.
 
-![Paint-by-numbers result](frontend/public/studio/bengal-pbn.webp)
+![Paint-by-numbers result](/images/projects/clawAndSoul/bengal-pbn.png)
 
 ### 3. Commerce & Operations
 
